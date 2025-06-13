@@ -1,0 +1,394 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', 'Noto Sans KR', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #E8E7F2; /* 연한 남보라색 */
+}
+
+nav {
+    background: #5A5B8E; /* 메인 남보라색 */
+    color: #fff;
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+nav ul li {
+    display: inline-flex;
+    align-items: center;
+}
+
+nav ul li a {
+    color: #C8C2F0; /* 밝은 남보라색 */
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #3F3B7A; /* 어두운 남보라색 */
+}
+
+#auto-scroll-btn {
+    background: #3F3B7A;
+    color: #C8C2F0;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#auto-scroll-btn:hover {
+    background: #5A5B8E;
+    transform: scale(1.05);
+}
+
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 1.2s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide-content {
+    text-align: center;
+    color: #fff;
+    background: rgba(90, 91, 142, 0.7); /* 메인 남보라색 반투명 */
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.ennui-image {
+    max-width: 120px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+.slide-content h1 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.slide-content p {
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+
+.slider-controls {
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+    text-align: center;
+}
+
+.slider-controls button {
+    background: #3F3B7A; /* 어두운 남보라색 */
+    color: #C8C2F0;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    margin: 0 0.5rem;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.slider-controls button:hover {
+    background: #5A5B8E; /* 메인 남보라색 */
+    transform: scale(1.05);
+}
+
+.section {
+    padding: 6rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-section {
+    position: relative;
+    background: url('https://via.placeholder.com/1200x400?text=Ennui+Background') center/cover no-repeat;
+    background-color: rgba(255, 255, 255, 0.9); /* 반투명 흰색 오버레이 */
+}
+
+.section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #5A5B8E;
+}
+
+.section h3 {
+    font-size: 1.6rem;
+    margin: 1rem 0 0.5rem;
+    color: #3F3B7A;
+}
+
+.about-content {
+    display: flex;
+    justify-content: center; /* 콘텐츠를 수평 중앙 정렬 */
+    align-items: center; /* 수직 중앙 정렬 */
+    gap: 1.5rem; /* 이미지와 텍스트 사이 간격 조정 */
+    background: rgba(255, 255, 255, 0.8); /* 콘텐츠 배경 반투명 */
+    padding: 1.5rem;
+    border-radius: 10px;
+    max-width: 800px; /* 콘텐츠 최대 너비 제한 */
+    margin: 0 auto; /* 중앙 정렬 */
+}
+
+.ennui-profile {
+    max-width: 200px;
+    border-radius: 50%;
+    border: 3px solid #3F3B7A; /* 어두운 남보라색 */
+    display: block;
+    margin: 0 auto; /* 이미지 자체를 중앙 정렬 */
+}
+
+.about-details {
+    flex: 1;
+    text-align: left; /* 텍스트는 왼쪽 정렬 유지 */
+}
+
+.about-details a {
+    text-decoration: none;
+    color: black;
+}
+
+.about-details a:hover {
+    color: rgb(65, 65, 65);
+}
+
+.team-intro {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.team-link {
+    color: #3F3B7A;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.team-link:hover {
+    color: #5A5B8E;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.team-member {
+    background: #E8E7F2; /* 연한 남보라색 */
+    padding: 1.5rem;
+    text-align: center;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.team-member img {
+    max-width: 150px;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+.team-member h3 {
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+    color: #3F3B7A;
+}
+
+.team-member p.role {
+    font-style: italic;
+    color: #5A5B8E;
+    margin-bottom: 1rem;
+}
+
+.member-details p {
+    margin: 0.5rem 0;
+    font-size: 0.95rem;
+}
+
+.social-links {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.pro {
+    text-decoration: none;
+    color: #3F3B7A;
+}
+
+.social-icon {
+    background: #3F3B7A;
+    color: #C8C2F0;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.social-icon:hover {
+    background: #5A5B8E;
+    transform: scale(1.1);
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.portfolio-item {
+    background: #E8E7F2; /* 연한 남보라색 */
+    padding: 1.5rem;
+    text-align: center;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.portfolio-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.7rem;
+    margin: 0.5rem 0;
+    border: 2px solid #C8C2F0; /* 밝은 남보라색 */
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.contact-form button {
+    background: #3F3B7A;
+    color: #C8C2F0;
+    border: none;
+    padding: 0.8rem 1.8rem;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: background 0.3s ease José, transform 0.2s ease;
+}
+
+.contact-form button:hover {
+    background: #5A5B8E;
+    transform: scale(1.05);
+}
+
+#closing {
+    text-align: center;
+    padding: 3rem 2rem;
+}
+
+footer {
+    background: #5A5B8E;
+    color: #C8C2F0;
+    text-align: center;
+    padding: 1.5rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    nav ul {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    #auto-scroll-btn {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+    }
+
+    .slide-content h1 {
+        font-size: 2rem;
+    }
+
+    .slide-content p {
+        font-size: 1rem;
+    }
+
+    .section {
+        padding: 4rem 1rem;
+    }
+
+    .about-content {
+        flex-direction: column; /* 작은 화면에서 수직으로 쌓이도록 */
+        text-align: center;
+    }
+
+    .ennui-profile {
+        margin: 0 auto 1rem; /* 이미지 하단 여백 추가 */
+    }
+
+    .about-details {
+        text-align: center; /* 텍스트도 중앙 정렬 */
+    }
+}
