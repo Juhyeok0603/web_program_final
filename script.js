@@ -60,7 +60,7 @@ function startAutoScroll() {
     isAutoScrolling = true;
     alert('자동 스크롤을 시작합니다!'); // 알림
 
-    const sections = ['home', 'about', 'portfolio', 'team', 'contact', 'home'];
+    const sections = ['home', 'about', 'portfolio', 'team', 'contact', 'hobbies', 'home'];
     let currentSectionIndex = 0;
 
     function scrollToNextSection() {

@@ -168,7 +168,7 @@ nav ul li a:hover {
     display: flex;
     justify-content: center; /* 콘텐츠를 수평 중앙 정렬 */
     align-items: center; /* 수직 중앙 정렬 */
-    gap: 1.5rem; /* 이미지와 텍스트 사이 간격 조정 */
+    gap: 1.5rem; /* 이미지와 텍스트 사이 간격 */
     background: rgba(255, 255, 255, 0.8); /* 콘텐츠 배경 반투명 */
     padding: 1.5rem;
     border-radius: 10px;
@@ -186,7 +186,7 @@ nav ul li a:hover {
 
 .about-details {
     flex: 1;
-    text-align: left; /* 텍스트는 왼쪽 정렬 유지 */
+    text-align: left;
 }
 
 .about-details a {
@@ -309,40 +309,43 @@ nav ul li a:hover {
     border-radius: 8px;
 }
 
-.contact-form {
-    max-width: 600px;
-    margin: 0 auto;
+
+.hobbies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem;
 }
 
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 0.7rem;
-    margin: 0.5rem 0;
-    border: 2px solid #C8C2F0; /* 밝은 남보라색 */
-    border-radius: 8px;
-    font-size: 1rem;
-}
-
-.contact-form button {
-    background: #3F3B7A;
-    color: #C8C2F0;
-    border: none;
-    padding: 0.8rem 1.8rem;
-    cursor: pointer;
-    border-radius: 8px;
-    font-size: 1rem;
-    transition: background 0.3s ease José, transform 0.2s ease;
-}
-
-.contact-form button:hover {
-    background: #5A5B8E;
-    transform: scale(1.05);
-}
-
-#closing {
+.hobby-item {
+    background: #E8E7F2; /* 연한 남보라색 */
+    padding: 1.5rem;
     text-align: center;
-    padding: 3rem 2rem;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hobby-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.hobby-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.hobby-item h3 {
+    font-size: 1.4rem;
+    color: #3F3B7A;
+    margin-bottom: 0.5rem;
+}
+
+.hobby-item p {
+    font-size: 0.95rem;
+    color: #333;
 }
 
 footer {
@@ -390,5 +393,9 @@ footer {
 
     .about-details {
         text-align: center; /* 텍스트도 중앙 정렬 */
+    }
+
+    .hobbies-grid {
+        grid-template-columns: 1fr; /* 작은 화면에서 한 열로 */
     }
 }
